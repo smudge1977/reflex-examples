@@ -30,6 +30,8 @@ def _show_item(item: EquipmentItem, index: int) -> rx.Component:
         rx.table.cell(f"${item.payment}"),
         rx.table.cell(item.date),
         rx.table.cell(status_badge(item.status)),
+        rx.table.cell(item.driver),
+        rx.table.cell(item.address),
         style={"_hover": {"bg": hover_color}, "bg": bg_color},
         align="center",
     )
@@ -175,6 +177,8 @@ def main_table() -> rx.Component:
                     _header_cell("Payment", "dollar-sign"),
                     _header_cell("Date", "calendar"),
                     _header_cell("Status", "notebook-pen"),
+                    _header_cell("Driver", "zap"),
+                    _header_cell("Address", "cast"),
                 ),
             ),
             rx.table.body(

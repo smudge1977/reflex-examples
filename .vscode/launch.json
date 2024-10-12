@@ -8,10 +8,11 @@
             "name": "Pynecone kk-example1",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/.venv/bin/pc",
+            // "program": "${workspaceFolder}/.venv/bin/pc",
             "args": ["run"],
-            "console": "integratedTerminal",
-            "python": "${workspaceFolder}/.venv/bin/python",
+            // "console": "integratedTerminal",
+            // "python": "${workspaceFolder}/.venv/bin/python",
+            "module":"reflex",
             "cwd": "${workspaceFolder}/kk-example1"
         },
         {
