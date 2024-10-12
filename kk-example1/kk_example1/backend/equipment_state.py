@@ -3,19 +3,21 @@ from typing import Union, List
 import csv
 
 
-class Item(rx.Base):
+class EquipmentItem(rx.Base):
     """The item class."""
 
     name: str
     payment: float
     date: str
     status: str
+    driver: str
+    address: str
 
 
 class EquipmentState(rx.State):
     """The state class."""
 
-    items: List[Item] = []
+    items: List[EquipmentItem] = []
 
     search_value: str = ""
     sort_value: str = ""
@@ -26,7 +28,7 @@ class EquipmentState(rx.State):
     limit: int = 12  # Number of rows per page
 
     @rx.var(cache=True)
-    def filtered_sorted_items(self) -> List[Item]:
+    def filtered_sorted_items(self) -> List[EquipmentItem]:
         items = self.items
 
         # Filter items based on selected item
@@ -74,7 +76,7 @@ class EquipmentState(rx.State):
         )
 
     @rx.var(cache=True, initial_value=[])
-    def get_current_page(self) -> list[Item]:
+    def get_current_page(self) -> list[EquipmentItem]:
         start_index = self.offset
         end_index = start_index + self.limit
         return self.filtered_sorted_items[start_index:end_index]
@@ -96,7 +98,7 @@ class EquipmentState(rx.State):
     def load_entries(self):
         with open("equipment.csv", mode="r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
-            self.items = [Item(**row) for row in reader]
+            self.items = [EquipmentItem(**row) for row in reader]
             self.total_items = len(self.items)
         print(f'Loaded {self.total_items}')
 

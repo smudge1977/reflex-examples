@@ -1,5 +1,5 @@
 import reflex as rx
-from ..backend.equipment_state import EquipmentState, Item
+from ..backend.equipment_state import EquipmentState, EquipmentItem
 from ..components.status_badge import status_badge
 
 
@@ -14,7 +14,7 @@ def _header_cell(text: str, icon: str) -> rx.Component:
     )
 
 
-def _show_item(item: Item, index: int) -> rx.Component:
+def _show_item(item: EquipmentItem, index: int) -> rx.Component:
     bg_color = rx.cond(
         index % 2 == 0,
         rx.color("gray", 1),
