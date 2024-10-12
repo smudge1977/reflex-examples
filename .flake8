@@ -1,0 +1,8 @@
+[flake8]
+# TODO: want line length to be 88 really!
+max-line-length = 288
+; extend-ignore = E203,E221
+exclude =
+    venv
+    .venv
+    .mypy_cache

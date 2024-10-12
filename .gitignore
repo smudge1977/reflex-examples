@@ -13,3 +13,4 @@ frontend.zip
 backend.zip
 dist/*
 venv/
+.venv/

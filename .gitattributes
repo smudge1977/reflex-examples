@@ -1,0 +1,25 @@
+* text eol=lf
+*.sh eol=lf
+*.css eol=lf
+*.js eol=lf
+*.md eol=lf
+*.py eol=lf
+*.html eol=lf
+*.pdf binary
+*.tgz binary
+*.rar binary
+*.zip binary
+*.deb binary
+*.docx binary
+*.bin binary
+*.png binary
+*.PNG binary
+*.jpg binary
+*.jpeg binary
+*.pyd binary
+*.ttf binary
+*.dll binary
+*.gif binary
+*.zlf binary
+*.pptx binary
+*.hex binary
